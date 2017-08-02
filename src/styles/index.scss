@@ -1,0 +1,144 @@
+@import 'LoginScreen.scss';
+
+$base-font: monospace;
+$page-width: 80%;
+$base-size: 17;
+$max-width: 80rem;
+$leading: 27;
+
+@mixin large {
+  @media only screen and (min-width: 1110px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 481px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+html {
+  font: normal #{$base-size}px/#{$leading / $base-size} $base-font;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  min-height: 100%;
+
+  @include small {
+    font-size: 0.5rem;
+  }
+
+  @include medium {
+    font-size: 0.75rem;
+  }
+
+  @include large {
+    font-size: 1rem;
+  }
+}
+
+body {
+  transition: 200ms;
+  background: black;
+  animation-name: flicker;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  min-height: 100%;
+}
+
+@keyframes flicker {
+  @for $i from 0 through 100 {
+    $flicker: random(7);
+    #{$i}% {
+      background: rgb($flicker, $flicker+7, $flicker);
+    }
+  }
+}
+
+main {
+  max-width: $max-width;
+  width: $page-width;
+  margin: 0 auto;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+.Hidden-Gif,
+.jsgif {
+  display: none;
+}
+
+.Ascii {
+  text-align: left;
+  display: block;
+  font-size: 0.25vw;
+  letter-spacing: 0.25vw;
+
+  @include small {
+    font-size: 0.5vw;
+    letter-spacing: 0.5vw;
+  }
+}
+
+.Code {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 12px;
+  font-family: monospace;
+  white-space: pre-wrap;
+
+  &:after {
+    position: relative;
+    content: '|';
+    color: limegreen;
+    position: inline;
+    animation-name: flicker;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.Reimertz {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-align: left;
+  text-decoration: none;
+  color: #888;
+  z-index: 1337;
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+
+  @include small {
+    font-size: 2rem;
+  }
+}

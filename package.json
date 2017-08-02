@@ -1,0 +1,25 @@
+{
+  "name": "elliot_on_g0d",
+  "version": "0.0.1",
+  "author": "pierre reimertz",
+  "homepage": "https://reimertz.github.io/elliot_on_g0d",
+  "license": "MIT",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10",
+    "say": "^0.11.0"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "build": "npm run build-css && react-scripts build",
+    "deploy": "npm run build && gh-pages -d build",
+    "web": "npm-run-all -p watch-css start-js",
+    "terminal": "node terminal.js"
+  }
+}
