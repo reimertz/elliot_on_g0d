@@ -13,7 +13,7 @@ module.exports = [
     [`Fine`, 'm1', 40040],
     [`Forget the one offs?`, 'm1', 42130],
     [`How about the countless wars`, 'm1', 44040],
-    [`declared in his name?`, 'm1', 46250],
+    [`declared in His name?`, 'm1', 46250],
     [`Okay?!`, 'm1', 49100],
     [`Fine!`, 'm1', 50160],
     [`Lets skip the random meaningless murder for a second shall we? `, 'm1', 51190],
